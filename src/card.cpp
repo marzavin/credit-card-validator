@@ -1,5 +1,9 @@
 #include "card.h"
 
+const char* Card::VISA_TYPE = "Visa";
+const char* Card::MASTERCARD_TYPE = "MasterCard";
+const char* Card::UNKNOWN_TYPE = "Unknown";
+
 Card::Card(char* number)
 {
     this->number = number;
@@ -10,15 +14,15 @@ char* Card::getNumber()
     return this->number;
 }
 
-char* Card::getType()
+const char* Card::getType()
 {
     switch(this->number[0])
     {
         case '4':
-            return "Visa";
+            return VISA_TYPE;
         case '5':
-            return "MasterCard";
+            return MASTERCARD_TYPE;
         default:
-            return "Unknown";
+            return UNKNOWN_TYPE;
     }
 }
