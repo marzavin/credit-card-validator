@@ -8,11 +8,15 @@ class Card
         static const char* MASTERCARD_TYPE;
         static const char* UNKNOWN_TYPE;
 
-        char* number;
+        char* source;
+        int length;
+        int* number;
     public:
         Card(char*);
+        ~Card();
         char* getNumber();
         const char* getType();
+        bool validate();
 };
 
 #endif
