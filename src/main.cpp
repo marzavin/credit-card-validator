@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "card.h"
+
 using namespace std;
   
 int main(int argc, char** argv)
@@ -12,7 +14,9 @@ int main(int argc, char** argv)
   
     for (int i = 0; i < argc; ++i)
     {
-        cout << argv[i] << "\n";
+        Card card(argv[i]);
+        cout << "Card number: " << argv[i] << endl;
+        cout << "Card type: " << card.getType() << endl;
     }
   
     return 0;
